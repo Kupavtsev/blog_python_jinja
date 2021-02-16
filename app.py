@@ -4,6 +4,9 @@ from flask_sqlalchemy import SQLAlchemy
 
 from datetime import date
 
+from models import *
+from forms import *
+
 import config as config
 
 __author__ = 'OlegKupavtsev'
@@ -65,8 +68,6 @@ def new_article(article_url):
 
 if __name__ == '__main__':
 
-    from models import *
-    from forms import *
 
     db.create_all()
 
