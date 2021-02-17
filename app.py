@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, make_response
 from flask_sqlalchemy import SQLAlchemy
+import json
 
 from datetime import date
 
@@ -120,6 +121,14 @@ def new_article(article_url):
 
     return render_template('article.html', comments=all_comments, article=article, date_today=date.today())
 
+@app.route('/json', methods=['GET'])
+def json_req():
+    some_data = {
+        'name': 'Oleg',
+        'job': 'Developer',
+        'info': [12, 43, 65] }
+    response = make_response(json.dumps(some_data))
+    return response
 
 if __name__ == '__main__':
 
