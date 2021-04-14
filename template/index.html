@@ -10,7 +10,7 @@
         <form method="post">
             <fieldset>
                 <div class="panel panel-primary panel-heading">
-                    <legend><h2>New Trading Article</h2></legend>
+                    <legend><h2>New Article</h2></legend>
                     <div class="panel-title">Title</div>
                     <input type="text" class="panel-body" name="title" value="">
                     <br>
@@ -32,7 +32,7 @@
         <br />
         <fieldset>
             <div class="panel panel-primary panel-heading">
-                <legend><h2>Blog articles</h2></legend>
+                <legend><h2>List of articles</h2></legend>
                 {% for article in articles %}<br>
                     <b>Title:</b> <a href="{{ url_for('new_article', article_url=article.article_url) }}">{{ article.title }}</a><br>
                     <b>Date:</b> {{ article.date_created }}<br>
